@@ -176,11 +176,11 @@ public class Processor {
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
             System.out.print("Loan Amount: ");
-            var amount = scanner.nextDouble();
+            double amount = scanner.nextDouble();
             if (amount <= 0.0) {
                 throw new IllegalArgumentException("Loan amount should be greater than 0");
             }
-            newLoanParams.setAmount(scanner.nextDouble());
+            newLoanParams.setAmount(amount);
             scanner.nextLine(); // Consume the leftover newline character
         } else {
             newLoanParams.setAmount(oldLoanParams.getAmount());
