@@ -5,6 +5,8 @@ import com.oneiro.loanapp.entity.LoanResult;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InterestCalculator {
 
@@ -27,10 +29,21 @@ public class InterestCalculator {
         double interestAmountAccrued = daysSinceStartDate > 0 ?
                 totalInterest * ((double) daysSinceStartDate / totalDays) : 0.0;
 
+        // Daily accrued interest for each day of the loan period
+        List<Double> dailyAccruedInterest = new ArrayList<>((int) totalDays);
+        double dailyInterest = totalInterest / totalDays;
+        double accruedInterest = 0.0;
+        for (int i = 0; i < totalDays; ++i) {
+            accruedInterest += dailyInterest;
+            dailyAccruedInterest.add(accruedInterest);
+        }
+
+
         return new LoanResult(dailyInterestWithoutMargin,
                 interestAmountAccrued,
                 accrualDate,
                 daysSinceStartDate,
-                totalInterest);
+                totalInterest,
+                dailyAccruedInterest);
     }
 }
