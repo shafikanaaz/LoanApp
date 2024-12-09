@@ -12,6 +12,7 @@ public class InterestCalculator {
 
     public static LoanResult calculateInterest(LoanParams loanParams) {
         System.out.println("\nCalculating interest...");
+        System.out.println(loanParams.toString());
 
         double fractionalBaseRate = loanParams.getBaseRate() / 100.0;
         double totalRate = (loanParams.getBaseRate() + loanParams.getMargin()) / 100.0;
