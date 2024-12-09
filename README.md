@@ -10,12 +10,12 @@ This application is build with Java 21 build with Gradle
 ### Set up instruction
 
 - Pre-requisite: You need to install Java if not already installed. 
-- Clone the repository from Github using the following command:
+- Clone the repository from Github using the following command:  
     ``git clone https://github.com/shafikanaaz/LoanApp.git``
-- Go to the project root directory
+- Go to the project root directory  
     ``cd LoanApp``
-- Run the following command to build the project
+- Run the following command to build the project  
     ``./gradlew clean build``
-- To run the application, use the 'Run App (^R)' command from IDE or use the following command:
+- To run the application, use the 'Run App (^R)' command from IDE or use the following command:  
     ``./gradlew run``
 
